@@ -57,25 +57,36 @@ public class ArrayBasics {
      * If the last index or bigger is received, the last item will be swapped with the penultimate one.
      * */
     public void swap(List<Integer> list, Integer index) {
-        if (index >= (list.size() - 1)) {
-            var last = list.size() - 1;
-            var penultimate = last - 1;
-            var firstValue = list.get(penultimate);
-
-            list.set(penultimate, list.get(last));
-            list.set(last, firstValue);
-        } else {
+        if (index < (list.size() - 1)) {
             var firstValue = list.get(index);
             list.set(index, list.get(index + 1));
             list.set((index + 1), firstValue);
         }
     }
 
+    public void exchange(List<Integer> list, Integer firstIndex, Integer secondIndex) {
+        var firstValue = list.get(firstIndex);
+        var secondValue = list.get(secondIndex);
+
+        list.set(firstIndex, secondValue);
+        list.set(secondIndex, firstValue);
+    }
+
+    public Integer fromToLength(List<Integer> list, Integer from, Integer to) {
+        var length = 0;
+
+        for (var i = from; i <= to; i++) {
+            length += 1;
+        }
+
+        return length;
+    }
+
     public static void main(String[] args) {
-        var number = new ArrayList<>(List.of(1, 2, 3));
+        var number = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7));
 
-        new ArrayBasics().swap(number, 2);
+        var length = new ArrayBasics().fromToLength(number, 0, 0);
 
-        System.out.println(number.toString());
+        System.out.println(length);
     }
 }
