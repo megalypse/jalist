@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SelectionSorting extends ArrayBasics implements Sorter {
     public void sort(List<Integer> targetList) {
-        final Integer size = targetList.size();
+        final int size = targetList.size();
 
         for (var i = 0; i < size; i++) {
             var minimumIndex = findMinimum(targetList, i, (size - 1));
@@ -17,7 +17,7 @@ public class SelectionSorting extends ArrayBasics implements Sorter {
     }
 
     public static void main(String[] args) {
-        var list = new ArrayList<Integer>(List.of(833, 5, 3, 4, 2, 1, 99));
+        var list = new ArrayList<>(List.of(833, 5, 3, 4, 2, 1, 99));
         var sorter = new SelectionSorting();
 
         sorter.sort(list);
