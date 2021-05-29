@@ -1,6 +1,5 @@
-package main.jalist;
+package main.array_basics;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayBasics {

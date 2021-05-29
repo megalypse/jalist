@@ -1,7 +1,7 @@
 package main.sortings;
 
 import main.contracts.Sorter;
-import main.jalist.ArrayBasics;
+import main.array_basics.ArrayBasics;
 
 import java.util.ArrayList;
 import java.util.List;

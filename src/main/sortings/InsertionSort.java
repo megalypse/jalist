@@ -1,7 +1,7 @@
 package main.sortings;
 
 import main.contracts.Sorter;
-import main.jalist.ArrayBasics;
+import main.array_basics.ArrayBasics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +33,6 @@ public class InsertionSort extends ArrayBasics implements Sorter {
 
         sorter.sort(numbers, 0, 0);
 
-        System.out.printf(numbers.toString());
+        System.out.print(numbers.toString());
     }
 }
