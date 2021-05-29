@@ -16,22 +16,26 @@ public class MergeSort extends ArrayBasics implements Sorter {
     }
 
     public void mergeSort(List<Integer> list, Integer start, Integer end) {
-        if (start < end) {
-            int m = 1 + (end - 1) / 2;
+        if (end > start) {
+            var half = (start + end) / 2;
 
-            mergeSort(list, start, m);
-            mergeSort(list, start, m + 1);
+            mergeSort(list, start, half);
+            mergeSort(list, (half + 1), end);
 
-            merge(list, start, m, end);
+            merge(list, start, end);
         }
     }
 
-    public void merge(List<Integer> list, Integer start, Integer half, Integer end) {
-        insertionSorter.sort(list, start, end);
+    public void merge(List<Integer> list, Integer start, Integer end) {
+        if (start > 0) {
+            insertionSorter.sort(list, (start - 1), end);
+        } else {
+            insertionSorter.sort(list, start, end);
+        }
     }
 
     public static void main(String[] args) {
-        var numbers = new ArrayList<>(List.of(7, 2, 1, 0));
+        var numbers = new ArrayList<>(List.of(1523, 2725, 999, 1, 12, 11, 13, 5, 6, 799999));
 
         new MergeSort().sort(numbers);
 
