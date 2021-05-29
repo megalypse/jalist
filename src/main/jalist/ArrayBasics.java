@@ -72,7 +72,12 @@ public class ArrayBasics {
         list.set(secondIndex, firstValue);
     }
 
-    public Integer fromToLength(List<Integer> list, Integer from, Integer to) {
+    // O(n)
+    /**
+     * This function returns the amount of items present from an index to another in an array.
+     * The function treat both 'from' and 'to' inclusively.
+     */
+    public Integer fromToLength(Integer from, Integer to) {
         var length = 0;
 
         for (var i = from; i <= to; i++) {
@@ -80,13 +85,5 @@ public class ArrayBasics {
         }
 
         return length;
-    }
-
-    public static void main(String[] args) {
-        var number = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7));
-
-        var length = new ArrayBasics().fromToLength(number, 0, 0);
-
-        System.out.println(length);
     }
 }
